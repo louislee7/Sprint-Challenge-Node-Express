@@ -78,8 +78,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     const { id } = req.params;
-    const { name, description } = req.body;
-    const newProject = { name, description };
+    const newProject = req.body;
     projectDb
         .update(id, newProject)
         .then(project => {
